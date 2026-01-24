@@ -14,7 +14,7 @@ describe('Add Employee E2E Test', () => {
 		})
 
 		// Assertions 
-		//cy.url().should('include', '/pim/viewPersonalDetails')
+		cy.url().should('not.include', '/auth/login')
 		cy.contains('Personal Details', { timeout: 10000 }).should('be.visible')
 	})
 })
