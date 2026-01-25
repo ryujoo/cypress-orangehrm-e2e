@@ -9,6 +9,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout code
@@ -23,4 +24,4 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/addEmployee.cy.js"
+        run: npx cypress run --browser chrome --headless --spec "cypress/e2e/addEmployee.cy.js"
