@@ -15,13 +15,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Cypress tests
-        run: npx cypress run --browser chrome --spec "cypress/e2e/ci-smoke.cy.js"
+          browser: chrome
+          spec: cypress/e2e/ci-smoke.cy.js
