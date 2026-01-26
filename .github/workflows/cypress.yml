@@ -24,4 +24,4 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests
-        run: npx cypress run --browser chrome --spec "cypress/e2e/addEmployee.cy.js"
+        run: npx cypress run --browser chrome --spec "cypress/e2e/ci-smoke.cy.js"
