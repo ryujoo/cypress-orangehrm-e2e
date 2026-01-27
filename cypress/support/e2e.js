@@ -16,7 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-Cypress.on('uncaught:exception', () => {
-	// returning false prevents Cypress from failing the test
-	return false
+Cypress.on('uncaught:exception', (err) => {
+	// Ignore known demo app errors
+	if (err.message.includes('reading \'response\'')) {
+		return false
+	}
 })

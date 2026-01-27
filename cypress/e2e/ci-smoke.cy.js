@@ -8,11 +8,8 @@ describe('CI Smoke Test', () => {
     cy.contains('Dashboard', { timeout: 15000 }).should('be.visible')
     cy.get('.oxd-sidepanel', { timeout: 15000 }).should('be.visible')
 
-    // Open user dropdown
-    cy.get('.oxd-userdropdown-name', { timeout: 15000 }).click()
-
-    // Click Logout
-    cy.contains('Logout', { timeout: 15000}).click()
+    // Logout
+    cy.logout()
 
     // Assert redirected to login page
     cy.url({ timeout: 150000}).should('include', '/auth/login')

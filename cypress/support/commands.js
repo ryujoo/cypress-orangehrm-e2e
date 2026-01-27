@@ -26,3 +26,8 @@ Cypress.Commands.add('addEmployee', (employee) => {
   })
 
 })
+
+Cypress.Commands.add('logout', () => {
+  cy.get('.oxd-userdropdown-name', { timeout: 15000 }).click()
+  cy.contains('Logout', { timeout: 15000 }).click()
+})
