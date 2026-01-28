@@ -138,3 +138,14 @@ Created as a hands‑on Cypress + CI learning project with a focus on **resume�
 ## ✅ Status
 
 🟢 CI Passing | 🟢 Smoke Tests Stable | 🟢 API Tests Passing
+
+---
+
+## ⚠ ️ CI Notes
+
+This project runs against the public OrangeHRM demo site.
+
+Because the demo environment contains unstable background APIs and shared test data, CI execution may occasionally experience timeouts. To ensure reliability and fast feedback, the CI pipeline intentionally scopes Cypress execution to a critical happy-path test.
+
+In a production environment, these tests would run against controlled test data or mocked APIs.
+
