@@ -10,16 +10,12 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Run Cypress tests (headless Chrome)
-        run: npx cypress run --browser chrome --headless
+      - run: npx cypress run --browser chrome --headless

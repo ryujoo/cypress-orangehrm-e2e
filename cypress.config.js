@@ -1,10 +1,15 @@
 const { defineConfig } = require("cypress");
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
-    retries: 0,
-    defaultCommandTimeout: 8000,
+    rbaseUrl: "https://opensource-demo.orangehrmlive.com",
+    chromeWebSecurity: false,
+
     pageLoadTimeout: 60000,
-    video: false,
+    defaultCommandTimeout: 10000,
+
+    setupNodeEvents(on, config) {
+      // required but empty
+    },
   },
-})
+});
