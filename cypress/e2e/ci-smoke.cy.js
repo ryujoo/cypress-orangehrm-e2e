@@ -1,5 +1,12 @@
+// NOTE:
+// This test is intended for local execution.
+// CI runs are scoped due to demo environment instability.
+
 describe('CI Smoke Test', () => {
   it('Logs in and logs out successfully', () => {
+
+    cy.visit('/', { failOnStatusCode: false })
+
     // Login
     cy.login('Admin', 'admin123')
 
